@@ -21,7 +21,7 @@ end
 function love.conf(t)
     ReadSettings()
     t.identity = "data/saves" -- file location
-    -- t.version = "1.0.0" specifies love version??
+    -- t.version = "1.0.0" specifies love version
     t.console = false
     -- t.externalstorage = true -- for android
     t.gammacorrect = true
