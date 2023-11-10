@@ -7,7 +7,7 @@ function Character:new(o, name, type, hp, speed)
     setmetatable(o, self)
     self.__index = self
     self.type = type
-    self.name = name or "DefaulEnemy"
+    self.name = name or "DefautlEnemy"
     self.hp = hp or 100
     self.speed = speed or 10
     -- if then based on enum of character type else defalut.png
