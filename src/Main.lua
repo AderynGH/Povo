@@ -9,7 +9,7 @@ local gameDisplay = Display:new()
 local gameManager = GameManager:new()
 
 function love.load()
-    Game()
+    gameManager()
 end
 
 function love.update(dt)
