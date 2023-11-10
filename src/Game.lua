@@ -11,9 +11,8 @@ function Game:new(o)
     local player = Character:new(nil, "Player", 100, 10)
     local score = 0
     return o
-
-    function Game:loop()
-        -- code to run the game loop goes here
-    end
+end
+function Game:loop()
+    -- code to run the game loop goes here
 end
 return GameManager
