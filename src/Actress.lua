@@ -1,15 +1,16 @@
-_G.Displayable = require("Displayable")
+local Displayable = require("Displayable")
 
-function Actress()
-    return {
-        
-        m_iDisplayable = iDisplayable,
-        type = nill,
-        name = nill,
-        hp = nill,
-        speed = nill
-        
-    }
+local Actress = Displayable:new()
+
+function Actress:new(o, type, name, hp, speed)
+    o = o or Displayable:new(o)
+    setmetatable(o, self)
+    self.__index = self
+    self.type = type or "Enemy"
+    self.name = name or "mob name"
+    self.hp = hp or 100
+    self.speed = speed or 10
+    return o
 end
 
-return actress
+return Actress
