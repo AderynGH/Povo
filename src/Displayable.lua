@@ -4,7 +4,7 @@ function Displayable:new(o, position, color, image)
     setmetatable(o, self)
     self.__index = self
     self.position = position or {x=0, y=0}
-    self.image = image or "assets/placeholder.png"
+    self.image = image or "sprites/placeholder.png"
     return o
 end
 
