@@ -10,7 +10,8 @@ function Character:new(o, name, type, hp, speed)
     self.name = name or "DefaulEnemy"
     self.hp = hp or 100
     self.speed = speed or 10
-    self.image = "assets/character.png"
+    -- if then based on enum of character type else defalut.png
+    self.image = "assets/enemy.png"
     
     return o
 end
