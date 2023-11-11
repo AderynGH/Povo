@@ -36,6 +36,8 @@ function Displayable:update(dt)
 end
 
 function Displayable:draw()
+    --_G.love.graphics.setColor(1, 0, 0)
+    --_G.love.graphics.rectangle("fill", self.position.x, self.position.y, 16, 16)
     _G.love.graphics.draw(self.image, self.frameQuads[self.currentFrame], self.position.x, self.position.y)
 end
 
