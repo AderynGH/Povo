@@ -9,4 +9,9 @@ function UI:new(o)
     return o
 end
 
+function UI:use()
+    -- ui function
+end
+
+
 return UI

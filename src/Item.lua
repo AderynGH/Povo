@@ -11,7 +11,9 @@ function Item:new(o, type, name, price)
     self.price = price or 0
     return o
 end
+
 function Item:use()
-    -- code go here
+    -- call item function
 end
+
 return Item
