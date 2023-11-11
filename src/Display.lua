@@ -23,6 +23,7 @@ end
 
 function Display:draw()
     for _, displayable in ipairs(self.displayables) do
+        displayable.animation:update(1/60);
         displayable:draw()  -- Assuming each displayable has a draw method
     end
 end
