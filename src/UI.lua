@@ -1,9 +1,7 @@
-local Displayable = require("Displayable")
-
-local UI = Displayable:new()
+local UI = _G.Povo.Displayable:new()
 
 function UI:new(o)
-    o = o or Displayable:new(o)
+    o = o or _G.Povo.Displayable:new(o)
     setmetatable(o, self)
     self.__index = self
     return o

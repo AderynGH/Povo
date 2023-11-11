@@ -4,7 +4,7 @@ function Displayable:new(o, position, image, shapeCollider)
     setmetatable(o, self)
     self.__index = self
     self.position = position or {x=0, y=0}
-    self.image = image or "sprites/placeholder.png"
+    self.image = image or "../sprites/placeholder.png"
     self.shapeCollder = shapeCollider or nil
     return o
 end

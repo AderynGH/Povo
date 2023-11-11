@@ -1,4 +1,3 @@
-local Character = require("Character")
 local Enemy = require("Enemy")
 
 local GameManager = {}
@@ -8,7 +7,6 @@ function GameManager:new(o)
     self.__index = self
     self.characters = {}
     self.enemies = {}
-    local player = Character:new(nil, "Player", 100, 10)
     local score = 0
     return o
 end

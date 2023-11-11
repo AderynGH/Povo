@@ -1,9 +1,7 @@
-local Displayable = require("Displayable")
-
-local Item = Displayable:new()
+local Item = _G.Povo.Displayable:new()
 
 function Item:new(o, type, name, price)
-    o = o or Displayable:new(o)
+    o = o or _G.Povo.Displayable:new(o)
     setmetatable(o, self)
     self.__index = self
     self.type = type or "Item"
