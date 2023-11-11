@@ -24,7 +24,7 @@ function Actress:newAnimation(o, aniName, d, idle, sf, aniL, spd, aniSprites)
     self.animationSpeed = spd or 20
     self.animationTimer = 0.1
     self.sprite = love.graphics.newImage(aniSprites) or
-    love.graphics.newImage("../sprites/defaultActress.png")
+    love.graphics.newImage("sprites/defaultActress.png")
     --[[self.spriteWidth = SpriteManger:getSpriteWidth(aniSprites) or 64
     self.spriteHeight = getSpriteHeight(aniSprites) or 64
     self.quadWidth = getQuadWidth(spriteWidth) or 64
