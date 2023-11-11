@@ -1,9 +1,7 @@
-local Actress = require("Actress")
-
-local Enemy = Actress:new()
+local Enemy = _G.Povo.Actress:new()
 
 function Enemy:new(o, name, type, hp, speed)
-    o = o or Actress:new(o)
+    o = o or _G.Povo.Actress:new(o)
     setmetatable(o, self)
     self.__index = self
     self.type = type

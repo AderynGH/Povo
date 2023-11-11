@@ -1,10 +1,7 @@
-local Displayable = require("Displayable")
-local SpriteManger = require("SpriteManager")
-
-local Actress = Displayable:new()
+local Actress = _G.Povo.Displayable:new()
 
 function Actress:new(o, type, name, hp, speed)
-    o = o or Displayable:new(o)
+    o = o or _G.Povo.Displayable:new(o)
     setmetatable(o, self)
     self.__index = self
     self.type = type or "Enemy"

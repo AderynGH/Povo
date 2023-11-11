@@ -1,4 +1,3 @@
-
 local Display = {}
 
 function Display:new(o)

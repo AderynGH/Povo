@@ -1,6 +1,4 @@
-local Displayable = require("Displayable")
-
-local Environment = Displayable:new()
+local Environment = _G.Povo.Displayable:new()
 
 function Environment:new(o, type, name, hp)
     o = o or self

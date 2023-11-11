@@ -1,9 +1,8 @@
-local Actress = require("Actress")
 
-local Character = Actress:new()
+local Character = _G.Povo.Actress:new()
 
 function Character:new(o, name, hp, speed)
-    o = o or Actress:new(o)
+    o = o or _G.Povo.Actress:new(o)
     setmetatable(o, self)
     self.__index = self
     self.type = "Character"

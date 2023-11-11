@@ -1,5 +1,3 @@
-_G.love = require(love)
-
 local Controller = {}
 
 function Controller:new(o)
