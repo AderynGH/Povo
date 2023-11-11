@@ -10,6 +10,15 @@ function scene:addDisplayable(displayable)
     table.insert(self.displayables, displayable)
 end
 
+
+function scene:generateMap()
+    local mapData = {}
+end
+
+function scene:generateMapGrid(mapData)
+    -- nested for loops of 1's and 0's 
+end
+
 function scene:setDisplay()
     -- code here, send displayables to display
 end
