@@ -10,12 +10,16 @@ function Enemy:new(o, name, type, hp, speed)
     self.speed = speed or 10
     -- if then based on enum of character type else default.png
     self.image =  "../sprites/enemy.png"
-
+    self.attacks = {}
     return o
 end
 
 function Enemy:attack(attackAnimation, weapon)
     -- atack code here
+end
+
+function Enemy:defaultAI()
+
 end
 
 return Enemy
