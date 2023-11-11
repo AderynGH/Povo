@@ -11,7 +11,7 @@ function Enemy:new(o, name, type, hp, speed)
     self.hp = hp or 100
     self.speed = speed or 10
     -- if then based on enum of character type else default.png
-    self.image =  "sprites/enemy.png"
+    self.image =  "../sprites/enemy.png"
 
     return o
 end
