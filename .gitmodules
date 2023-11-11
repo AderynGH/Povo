@@ -1,6 +1,3 @@
-[submodule "src/vendor/anim8"]
-	path = src/vendor/anim8
-	url = https://github.com/kikito/anim8.git
 [submodule "src/vendor/jumper"]
 	path = src/vendor/jumper
 	url = https://github.com/Yonaba/Jumper

@@ -1,8 +1,3 @@
-local addNode(self, node, nextNode, ed)
-	if not self._pathDB[node] then self._pathDB[node] = {} end
-	self._pathDB[node][ed] = (nextNode == ed and node or nextNode)
-end
-
 -- Path lookupTable
 local lookupTable = {}
 lookupTable.__index = lookupTable
@@ -10,6 +5,11 @@ lookupTable.__index = lookupTable
 function lookupTable:new()
 	local lut = {_pathDB = {}}
 	return setmetatable(lut, lookupTable)
+end
+
+local function addNode(self, node, nextNode, ed)
+	if not self._pathDB[node] then self._pathDB[node] = {} end
+	self._pathDB[node][ed] = (nextNode == ed and node or nextNode)
 end
 
 function lookupTable:addPath(path)
