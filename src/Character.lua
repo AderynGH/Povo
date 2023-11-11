@@ -1,4 +1,5 @@
 local Actress = require("Actress")
+local Controller = require("Controller")
 
 local Character = Actress:new()
 
@@ -12,8 +13,13 @@ function Character:new(o, name, hp, speed)
     self.speed = speed or 10
     self.image = "sprites/character.png"
     self.inventory = {}
+    self.controller = Controller:new()
     
     return o
+end
+
+function Character:attack()
+    -- attack code
 end
 
 function Character:pickup(item, pos)

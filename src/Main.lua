@@ -1,7 +1,7 @@
 --requires
 _G.love = require("love")
 local Display = require("Display")
-local GameManager = require("GameManager")
+local GameManager = require("Game")
 
 
 --instatiating objects

@@ -10,10 +10,11 @@ function Actress:new(o, type, name, hp, speed)
     self.name = name or "mob name"
     self.hp = hp or 100
     self.speed = speed or 10
-    function Actress:die(deathAnimation)
-        -- death code here
-    end
+
     return o
+end
+function Actress:die(deathAnimation)
+    -- death code here
 end
 
 return Actress
