@@ -13,5 +13,5 @@ end
 function love.update(dt)
     _G.gameManager.loop()
     _G.gameDisplay:draw()
-    Display()
+    _G.Povo.Display()
 end
