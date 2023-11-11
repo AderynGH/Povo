@@ -8,10 +8,10 @@
 if (...) then
 
 	-- Dependencies
-  local _PATH = (...):gsub('%.grid$','')
+  local _PATH = ('vendor.jumper.jumper'):gsub('%.grid$','')
 
 	-- Local references
-  local Utils = require (_PATH .. '.core.utils')
+  local Utils = require (_PATH .. ".core.utils")
   local Assert = require (_PATH .. '.core.assert')
   local Node = require (_PATH .. '.core.node')
 

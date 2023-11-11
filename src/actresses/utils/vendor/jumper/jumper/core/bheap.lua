@@ -22,7 +22,7 @@
 if (...) then
 
 	-- Dependency
-	local Utils = require((...):gsub('%.bheap$','.utils'))
+	local Utils = require(('vendor.jumper.jumper.core.utils'):gsub('%.bheap$','.utils'))
 	
 	-- Local reference
 	local floor = math.floor
