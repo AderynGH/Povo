@@ -6,8 +6,8 @@ if (...) then
 	local _PATH = (...):gsub('%.search.thetastar$','')
 
 	-- Depandancies
-	local Heuristics   = require (_PATH .. '.core.heuristics')
-	local astar_search = require (_PATH .. '.search.astar')
+	local Heuristics   = require ('heuristics')
+	local astar_search = require ('astar')
 
 	-- Internalization
 	local ipairs = ipairs

@@ -9,7 +9,7 @@ local _RELEASEDATE = ""
 if (...) then
 
   -- Dependencies
-  local _PATH = (...):gsub('%.pathfinder$','')
+  local _PATH = ('vendor.jumper.jumper'):gsub('%.pathfinder$','')
 	local Utils     = require (_PATH .. '.core.utils')
 	local Assert    = require (_PATH .. '.core.assert')
   local Heap      = require (_PATH .. '.core.bheap')

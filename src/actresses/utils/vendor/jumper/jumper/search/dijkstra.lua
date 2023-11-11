@@ -2,8 +2,8 @@
 
 if (...) then
 
-  local astar_search = require ((...):gsub('%.dijkstra$','.astar'))
-  -- Dijkstra is similar to aStar, with no heuristic
+  local astar_search = require ('vendor.jumper.jumper.search.astar')
+  -- Dijkstra is similar to aStar, with no heuristics
   local dijkstraHeuristic = function() return 0 end
 
   -- Calculates a path.

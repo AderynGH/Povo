@@ -3,7 +3,7 @@
 if (...) then
 
 	-- Dependencies
-	local _PATH = (...):gsub('%.utils$','')
+	local _PATH = ('vendor.jumper.jumper.core'):gsub('%.utils$','')
 	local Path = require (_PATH .. '.path')
 	local Node = require (_PATH .. '.node')
 
