@@ -1,21 +1,42 @@
 local Displayable = {}
-function Displayable:new(o, position, image, frameDuration, frames)
+function Displayable:new(o, position, spriteSheet, frameDuration, totalFrames)
     o = o or {}
     setmetatable(o, self)
     self.__index = self
     self.position = position or {x=0, y=0}
-    self.image = image or "sprites/placeholder.png"
-    self.frames = frames or '1-1'
-    
+    self.image = spriteSheet or _G.love.graphics.newImage("sprites/FilledBlock.png")
+    self.frameDuration = frameDuration
+    self.currentFrame = 1
+    self.elapsedTime = 0
+    self.totalFrames = totalFrames or '1'
 
-    self.grid = _G.Povo.Anim8.newGrid(16, 16, self.image:getWidth(), self.image:getHeight())
-    self.animation = _G.Povo.Anim8.newAnimation(self.grid(frames, 1), frameDuration or 0.1)
+    self.frameQuads = {}
+    local frameWidth, frameHeight = 16, 16
+    local sheetWidth, sheetHeight = self.image:getWidth(), self.image:getHeight()
+
+    for i = 0, self.totalFrames - 1 do
+        local x = (i * frameWidth) % sheetWidth
+        local y = math.floor((i * frameWidth) / sheetWidth) * frameHeight
+        local quad = love.graphics.newQuad(x, y, frameWidth, frameHeight, sheetWidth, sheetHeight)
+        table.insert(self.frameQuads, quad)
+    end
 
     return o
 end
 
+function Displayable:update(dt)
+    self.elapsedTime = self.elapsedTime + dt
+    if self.elapsedTime >= self.frameDuration then
+        self.elapsedTime = self.elapsedTime - self.frameDuration
+        self.currentFrame = self.currentFrame + 1
+        if self.currentFrame > #self.frameQuads then
+            self.currentFrame = 1
+        end
+    end
+end
+
 function Displayable:draw()
-    self.animation:draw(self.image, self.position.x, self.position.y)
+    _G.love.graphics.draw(self.image, self.frameQuads[self.currentFrame], self.position.x, self.position.y)
 end
 
 return Displayable
