@@ -31,7 +31,7 @@ function love.conf(t)
     t.window.height = 600
     -- t.window.resizable = true can break games
     -- t.window.minwidth/height can be useful if resizable is on
-    t.window.borderless = true/false
+    -- t.window.borderless = true/false
     -- t.window.vsync = 0/1
     t.window.display = 1
     t.window.fullscreen = false --true or false

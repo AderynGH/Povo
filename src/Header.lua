@@ -1,20 +1,20 @@
 --src
-local Actress = require("Actress")
-
-local Collider = require("Collider")
-local Controller = require("Controller")
-local Display = require("Display")
-local Displayable = require("Displayable")
-local Enemy = require("Enemy")
-local Environment = require("Environment")
-local GameManager = require("Game")
-local Player = require("Player")
-local RoomGen = require("RoomGen")
-local Scene = require("Scene")
-local SpriteManager = require("SpriteManager")
+_G.Actress = require("Actress")
+_G.Anim8 = require("../vendor/anim8")
+_G.Collider = require("Collider")
+_G.Controller = require("Controller")
+_G.Display = require("Display")
+_G.Displayable = require("Displayable")
+_G.Enemy = require("Enemy")
+_G.Environment = require("Environment")
+_G.GameManager = require("Game")
+_G.Player = require("Player")
+_G.RoomGen = require("RoomGen")
+_G.Scene = require("Scene")
+_G.priteManager = require("SpriteManager")
 
 --actresses
-local Character = require("../actresses/Character")
-local Door = require("../actresses/Door")
+_G.Character = require("../actresses/Character")
+_G.Door = require("../actresses/Door")
 
 --scenes
