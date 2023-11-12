@@ -9,8 +9,10 @@ function Character:new(o, name, hp, speed)
     self.name = "Player"
     self.hp = hp or 100
     self.speed = speed or 10
-    self.image = "sprites/character.png"
-    
+    self.image = "sprites/GreaterThan.png"
+
+    _G.gameManager:setPlayer1(o)
+
     return o
 end
 

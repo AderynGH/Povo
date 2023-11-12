@@ -3,6 +3,8 @@ local scene = {}
 function scene:new(o, displayables)
     setmetatable(o, self)
     self.displayables = displayables or {}
+    self.mapData = {}
+    self.gridData = {}
     return o
 end
 
@@ -12,10 +14,11 @@ end
 
 
 function scene:generateMap()
-    local mapData = {}
+    self.mapData = {}
 end
 
 function scene:generateMapGrid(mapData)
+    self.gridData = {}
     -- nested for loops of 1's and 0's 
 end
 

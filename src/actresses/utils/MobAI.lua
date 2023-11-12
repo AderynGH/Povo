@@ -1,44 +1,72 @@
--- Usage Example
--- First, set a collision map
-local map = {
-	{0,1,0,1,0},
-	{0,1,0,1,0},
-	{0,1,1,1,0},
-	{0,0,0,0,0},
-}
--- Value for walkable tiles
-local walkable = 0
-
--- Library setup
 local Grid = require("vendor.jumper.jumper.grid")
 local Pathfinder = require("vendor.jumper.jumper.pathfinder")
 
--- Creates a grid object
-local grid = Grid(map) 
--- Creates a pathfinder object using Jump Point Search
-local myFinder = Pathfinder(grid, 'JPS', walkable) 
+local mobAI = {}
 
--- Define start and goal locations coordinates
-local startx, starty = 1,1
-local endx, endy = 5,1
+-- Value for walkable tiles
+local walkable = 0
 
--- Calculates the path, and its length
-local path = myFinder:getPath(startx, starty, endx, endy)
-if path then
-  print(('Path found! Length: %.2f'):format(path:getLength()))
-	for node, count in path:nodes() do
-	  print(('Step: %d - x: %d - y: %d'):format(count, node:getX(), node:getY()))
+function mobAI:new(o, trgt)
+	o = o or {}
+	setmetatable(o, self)
+	self.__index = self
+	self.wantToMove = true
+	self.path = {}
+	self.pathBuffer = self.path
+	self.nodes = {}
+	self.nodePos = 1
+	self.target = trgt or _G.gameManager.player1
+	return o
+end
+
+local scene = _G.gameDisplay.SceneManager:getScene()
+
+local grid = Grid(scene.gridData)
+local myFinder = Pathfinder(grid, 'JPS', walkable)
+
+function mobAI:getPath()
+	local cPosX, cPosY = self.position[1], self.position[2]
+	local pPosX, pPosY = self.target.Position[1], self.target.Position[2]
+	self.path = myFinder:getPath(cPosX, cPosY, pPosX, pPosY)
+	self.nodes = self.path:nodes()
+end
+
+function mobAI:moveTowardsTarget(dt)
+	if self.path then
+		self.position [1] = self.position[1] + (self.nodes:getX(self.nodePos) * self.speed) / dt
+		self.position [2] = self.position[2] + (self.nodes:getY(self.nodePos) * self.speed) / dt
+		-- needs to be able to increment the node position
+		self:checkNodePos()
 	end
 end
 
---> Output:
---> Path found! Length: 8.83
---> Step: 1 - x: 1 - y: 1
---> Step: 2 - x: 1 - y: 3
---> Step: 3 - x: 2 - y: 4
---> Step: 4 - x: 4 - y: 4
---> Step: 5 - x: 5 - y: 3
---> Step: 6 - x: 5 - y: 1
+function mobAI:checkTargetPos(cPos)
+	if cPos ~= self.target.Position then
+		mobAI:getPath()
+	end
+end
 
+function mobAI:checkBuffer()
+	if self.path ~= self.pathBuffer then
+		self.nodePos = 1
+		self.pathBuffer = self.path
+	end
+end
 
--- local grid = Grid(scene:generateMapGrid())
+function mobAI:checkNodePos()
+	if self.position[1] == self.position.nodes:getX(self.nodePos + 1) and
+	self.position[2] == self.nodes:getY(self.nodePos + 1) then
+		self.nodePos = self.nodePos + 1
+	end
+
+	--[[if (self.position[1] % self.position.nodes:getX(self.nodePos + 1)) 
+	< 1 and self.position[2] % self.nodes:getY(self.nodePos + 1) < 1 then
+		self.nodePos = self.nodePos + 1
+	end]]
+	-- something like this would be more appropriate, checking for an approximation
+	-- instead of an exact value, though what I wrote fails to take into account directional
+	-- influences, but if mobs don't really have collision, then it doesn't particularly matter
+end
+
+-- a function for the ai to be able to decide actions would likely be appropriate here 
+return mobAI

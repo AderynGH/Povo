@@ -1,6 +1,7 @@
 local MobAI = require("utils/MobAI")
 local Enemy = _G.Povo.Enemy()
 
+-----------------------------------------------------------------------------
 local Zombie = setmetatable({}, Enemy)
 Zombie.__index = Zombie
 
@@ -10,6 +11,7 @@ function Zombie:New(name, hp, damage)
     return instance
 end
 
+-----------------------------------------------------------------------------
 local Lich = setmetatable({}, Enemy)
 Lich.__index = Lich
 
@@ -18,6 +20,8 @@ function Lich:New(name, hp, damage, ai)
     self.ai = ai or self.defaultAI()
     return instance
 end
+
+-----------------------------------------------------------------------------
 
 local OnkiGamora = setmetatable({}, Enemy)
 OnkiGamora.__index = OnkiGamora
