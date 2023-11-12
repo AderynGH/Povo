@@ -66,6 +66,7 @@ function mobAI:checkNodePos()
 	-- something like this would be more appropriate, checking for an approximation
 	-- instead of an exact value, though what I wrote fails to take into account directional
 	-- influences, but if mobs don't really have collision, then it doesn't particularly matter
+	-- since the mob should be able to get to an exact position
 end
 
 -- a function for the ai to be able to decide actions would likely be appropriate here 

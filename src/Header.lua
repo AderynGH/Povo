@@ -14,9 +14,11 @@ _G.Povo.Scene = require("Scene")
 --actresses
 _G.Povo.Character = require("actresses/Character")
 _G.Povo.Door = require("actresses/Door")
+_G.Povo.MobAI = require("actresses/utils/MobAI")
+_G.Povo.MobData = require("actresses/MobData")
 
 --scenes
-return{
+return {
     Displayable = _G.Povo.Displayable,
     Display = _G.Povo.Display,
     Actress = _G.Povo.Actress,
@@ -29,5 +31,7 @@ return{
     RoomGen = _G.Povo.RoomGen,
     Scene = _G.Povo.Scene,
     Character = _G.Povo.Character,
-    Door = _G.Povo.Door
+    Door = _G.Povo.Door,
+    MobAI = _G.Povo.MobAI,
+    MobData = _G.Povo.MobData
 }

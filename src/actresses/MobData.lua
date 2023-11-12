@@ -1,14 +1,18 @@
-local MobAI = require("utils/MobAI")
+local MobAI = _G.Povo.MobAI()
 local Enemy = _G.Povo.Enemy()
 
 -----------------------------------------------------------------------------
 local Zombie = setmetatable({}, Enemy)
 Zombie.__index = Zombie
 
-function Zombie:New(name, hp, damage)
+function Zombie:New(name, hp, damage, ai)
     local instance = setmetatable(Enemy:new(name, hp, damage), Zombie)
-    self.ai = MobAI.Zombie
+    self.ai = ai or MobAI:new()
     return instance
+end
+
+function Zombie:Bite()
+    -- if zombie is touching player, player hp down 
 end
 
 -----------------------------------------------------------------------------
@@ -21,6 +25,10 @@ function Lich:New(name, hp, damage, ai)
     return instance
 end
 
+function Lich:Fireball()
+    -- spawns a 'minus' projectile that flys at the player
+end
+
 -----------------------------------------------------------------------------
 
 local OnkiGamora = setmetatable({}, Enemy)
@@ -30,6 +38,10 @@ function OnkiGamora:New(name, hp, damage, ai)
     local instance = setmetatable(Enemy:new(name, hp, damage), OnkiGamora)
     self.ai = ai or self.defaultAI()
     return instance
+end
+
+function OnkiGamora:ThrowBoomerang()
+    -- throws maybe a 'bracket' at the player that arches back
 end
 
 return {

@@ -6,7 +6,7 @@ function Character:new(o, name, hp, speed)
     setmetatable(o, self)
     self.__index = self
     self.type = "Character"
-    self.name = "Player"
+    self.name = name or "Player"
     self.hp = hp or 100
     self.speed = speed or 10
     self.image = "sprites/GreaterThan.png"
