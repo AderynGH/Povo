@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 -- ThetaStar implementation
 -- See: http://aigamedev.com/open/tutorials/theta-star-any-angle-paths for reference
 
