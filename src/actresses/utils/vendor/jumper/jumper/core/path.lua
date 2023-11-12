@@ -11,7 +11,7 @@
 if (...) then
 	
   -- Dependencies
-	local _PATH = ('vendor.jumper.jumper.core')
+	local _PATH = ('actresses.utils.vendor.jumper.jumper.core')
   local Heuristic = require(_PATH .. '.heuristics')
 	
 	 -- Local references

@@ -1,15 +1,15 @@
-local spriteManager = {}
+local SpriteManger = {}
 
-function spriteManager:getSpriteWidth()
+function SpriteManger:getSpriteWidth()
 end
 
-function spriteManager:getSpriteHeight()
+function SpriteManger:getSpriteHeight()
 end
 
-function spriteManager:getQuadWidth()
+function SpriteManger:getQuadWidth()
 end
 
-function spriteManager:getQuadHeight()
+function SpriteManger:getQuadHeight()
 end
 
-return spriteManager
+return SpriteManger

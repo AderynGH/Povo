@@ -4,7 +4,7 @@
 if (...) then
 	
 	-- Dependancies
-	local _PATH = ('vendor.jumper.jumper'):gsub('%.core.assert$','')
+	local _PATH = ('actresses.utils.vendor.jumper.jumper'):gsub('%.core.assert$','')
 	local Utils = require (_PATH .. '.core.utils')
 	
 	-- Local references

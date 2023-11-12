@@ -1,6 +1,7 @@
 local scene = {}
 
 function scene:new(o, displayables)
+    o = o or {}
     setmetatable(o, self)
     self.displayables = displayables or {}
     self.mapData = {}

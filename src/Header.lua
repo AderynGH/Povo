@@ -6,11 +6,12 @@ _G.Povo.Controller = require("Controller")
 _G.Povo.Display = require("Display")
 _G.Povo.Enemy = require("Enemy")
 _G.Povo.Environment = require("Environment")
+_G.Povo.Scene = require("Scene")
 _G.Povo.SceneManager = require("SceneManager")
 _G.Povo.MobManager = require("MobManager")
 _G.Povo.GameManager = require("GameManager")
 _G.Povo.RoomGen = require("RoomGen")
-_G.Povo.Scene = require("Scene")
+
 
 --actresses
 _G.Povo.Character = require("actresses/Character")

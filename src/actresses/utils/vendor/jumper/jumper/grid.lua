@@ -9,7 +9,7 @@
 if (...) then
 
 	-- Dependencies
-  local _PATH = ('vendor.jumper.jumper'):gsub('%.grid$','')
+  local _PATH = ("actresses.utils.vendor.jumper.jumper"):gsub('%.grid$','')
 
 	-- Local references
   local Utils = require (_PATH .. ".core.utils")

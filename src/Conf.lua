@@ -1,4 +1,4 @@
-local function WriteDefaults()
+local function writeDefaults()
     local file = io.open("data/config.txt", "w")
     io.write("ResWidth  = 800")
     io.write("ResHeight = 600")
@@ -6,11 +6,11 @@ local function WriteDefaults()
     io.write("Display = 1")
 end   
 
-local function ReadSettings()
+local function readSettings()
     local file = io.open("data/config.txt", "r")
 
     if file == nil then
-        WriteDefaults()
+        writeDefaults()
     end
 
     local function ReadFile()
@@ -19,7 +19,7 @@ local function ReadSettings()
 end
 
 function love.conf(t)
-    ReadSettings()
+    readSettings()
     t.identity = "data/saves" -- file location
     -- t.version = "1.0.0" specifies love version
     t.console = false

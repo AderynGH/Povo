@@ -12,6 +12,7 @@ function GameManager:new(o)
     self.player1 = {}
     self.score = 0
     self.MobManager = MobManager
+    self.SceneManager = SceneManager
     return o
 end
 

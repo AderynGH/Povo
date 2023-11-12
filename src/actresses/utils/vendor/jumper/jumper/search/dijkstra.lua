@@ -2,7 +2,7 @@
 
 if (...) then
 
-  local astar_search = require ('vendor.jumper.jumper.search.astar')
+  local astar_search = require ('actresses.utils.vendor.jumper.jumper.search.astar')
   -- Dijkstra is similar to aStar, with no heuristics
   local dijkstraHeuristic = function() return 0 end
 

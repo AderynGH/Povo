@@ -11,7 +11,7 @@ function love.load()
     --On game load code
     _G.gameDisplay:add(_G.Povo.Displayable:new(nil, {x=5, y=5}, _G.love.graphics.newImage("sprites/AtSign.png"), 0.5, 1))
     _G.gameManager:setPlayer1(_G.Povo.Character:new(nil, {x=700, y=500}))
-    _G.gameManager.MobManager:SpawnZombie()
+    _G.gameManager.MobManager:spawnZombie()
 end
 
 function love.update(dt)

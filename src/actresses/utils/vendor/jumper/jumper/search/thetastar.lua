@@ -3,7 +3,7 @@
 
 if (...) then
 	
-	local _PATH = ('vendor.jumper.jumper'):gsub('%.search.thetastar$','')
+	local _PATH = ('actresses.utils.vendor.jumper.jumper'):gsub('%.search.thetastar$','')
 
 	-- Depandancies
 	local Heuristics   = require (_PATH .. '.core.heuristics')

@@ -1,5 +1,5 @@
-local Grid = require("vendor.jumper.jumper.grid")
-local Pathfinder = require("vendor.jumper.jumper.pathfinder")
+local Grid = require("actresses.utils.vendor.jumper.jumper.grid")
+local Pathfinder = require("actresses.utils.vendor.jumper.jumper.pathfinder")
 
 local MobAI = {}
 
@@ -19,7 +19,7 @@ function MobAI:new(o, trgt)
 	return o
 end
 
-local scene = _G.gameDisplay.SceneManager:getScene()
+local scene = _G.gameManager.SceneManager:getScene()
 
 local grid = Grid(scene.gridData)
 local myFinder = Pathfinder(grid, 'JPS', walkable)

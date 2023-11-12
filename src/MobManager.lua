@@ -9,7 +9,7 @@ function MobManager:new(o)
     return o
 end
 
-function MobManager:SpawnZombie()
+function MobManager:spawnZombie()
     table.insert(self.mobs, _G.Povo.MobData.Zombie:new("zombie", 100, 10))
 end
 
