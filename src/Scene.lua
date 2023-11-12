@@ -16,9 +16,17 @@ function scene:generateMap()
     self.mapData = {}
 end
 
+local ResX = 800
+local ResY = 600 -- placeholder for testing
+
 function scene:generateMapGrid(mapData)
     self.gridData = {}
-    -- nested for loops of 1's and 0's 
+    for i = 1, ResY do
+        for j = 1, ResX do
+            self.gridData[i][j] = 0
+        end
+    end
+    -- nested for loops of current resolution, should be generated either based on room or level
 end
 
 function scene:setDisplay()

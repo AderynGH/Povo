@@ -1,12 +1,12 @@
 local Grid = require("vendor.jumper.jumper.grid")
 local Pathfinder = require("vendor.jumper.jumper.pathfinder")
 
-local mobAI = {}
+local MobAI = {}
 
 -- Value for walkable tiles
 local walkable = 0
 
-function mobAI:new(o, trgt)
+function MobAI:new(o, trgt)
 	o = o or {}
 	setmetatable(o, self)
 	self.__index = self
@@ -24,14 +24,14 @@ local scene = _G.gameDisplay.SceneManager:getScene()
 local grid = Grid(scene.gridData)
 local myFinder = Pathfinder(grid, 'JPS', walkable)
 
-function mobAI:getPath()
+function MobAI:getPath()
 	local cPosX, cPosY = self.position[1], self.position[2]
 	local pPosX, pPosY = self.target.Position[1], self.target.Position[2]
 	self.path = myFinder:getPath(cPosX, cPosY, pPosX, pPosY)
 	self.nodes = self.path:nodes()
 end
 
-function mobAI:moveTowardsTarget(dt)
+function MobAI:moveTowardsTarget(dt)
 	if self.path then
 		self.position [1] = self.position[1] + (self.nodes:getX(self.nodePos) * self.speed) / dt
 		self.position [2] = self.position[2] + (self.nodes:getY(self.nodePos) * self.speed) / dt
@@ -40,20 +40,20 @@ function mobAI:moveTowardsTarget(dt)
 	end
 end
 
-function mobAI:checkTargetPos(cPos)
+function MobAI:checkTargetPos(cPos)
 	if cPos ~= self.target.Position then
-		mobAI:getPath()
+		MobAI:getPath()
 	end
 end
 
-function mobAI:checkBuffer()
+function MobAI:checkBuffer()
 	if self.path ~= self.pathBuffer then
 		self.nodePos = 1
 		self.pathBuffer = self.path
 	end
 end
 
-function mobAI:checkNodePos()
+function MobAI:checkNodePos()
 	if self.position[1] == self.position.nodes:getX(self.nodePos + 1) and
 	self.position[2] == self.nodes:getY(self.nodePos + 1) then
 		self.nodePos = self.nodePos + 1
@@ -70,4 +70,4 @@ function mobAI:checkNodePos()
 end
 
 -- a function for the ai to be able to decide actions would likely be appropriate here 
-return mobAI
+return MobAI

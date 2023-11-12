@@ -7,7 +7,8 @@ _G.Povo.Display = require("Display")
 _G.Povo.Enemy = require("Enemy")
 _G.Povo.Environment = require("Environment")
 _G.Povo.SceneManager = require("SceneManager")
-_G.Povo.GameManager = require("Game")
+_G.Povo.MobManager = require("MobManager")
+_G.Povo.GameManager = require("GameManager")
 _G.Povo.RoomGen = require("RoomGen")
 _G.Povo.Scene = require("Scene")
 
@@ -27,6 +28,7 @@ return {
     Enemy = _G.Povo.Enemy,
     Environment = _G.Povo.Environment,
     SceneManager = _G.Povo.SceneManager,
+    MobManager = _G.Povo.MobManager,
     GameManager = _G.Povo.GameManager,
     RoomGen = _G.Povo.RoomGen,
     Scene = _G.Povo.Scene,
