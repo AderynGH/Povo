@@ -1,3 +1,4 @@
+---@diagnostic disable: redundant-parameter
 --- The Path class.
 -- The `path` class is a structure which represents a path (ordered set of nodes) from a start location to a goal.
 -- An instance from this class would be a result of a request addressed to `Pathfinder:getPath`.

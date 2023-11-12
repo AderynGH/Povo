@@ -1,3 +1,4 @@
+---@diagnostic disable: cast-local-type, undefined-global
 -- Various assertion function for API methods argument-checking
 
 if (...) then

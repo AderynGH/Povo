@@ -12,7 +12,6 @@ function scene:addDisplayable(displayable)
     table.insert(self.displayables, displayable)
 end
 
-
 function scene:generateMap()
     self.mapData = {}
 end

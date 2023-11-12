@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 -- Various utilities for Jumper top-level modules
 
 if (...) then
