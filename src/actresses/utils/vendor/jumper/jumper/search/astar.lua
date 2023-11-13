@@ -9,7 +9,7 @@ if (...) then
 	local huge = math.huge
 
 	-- Dependancies
-	local _PATH = ('vendor.jumper.jumper')
+	local _PATH = ('actresses.utils.vendor.jumper.jumper')
 	local Heuristics = require (_PATH .. '.core.heuristics')
 	local Heap = require (_PATH.. '.core.bheap')
 

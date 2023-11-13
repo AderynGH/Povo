@@ -1,14 +1,14 @@
 local Displayable = {}
-function Displayable:new(o, position, spriteSheet, frameDuration, totalFrames)
+function Displayable:new(o)
     o = o or {}
     setmetatable(o, self)
     self.__index = self
-    self.position = position or {x=0, y=0}
-    self.image = spriteSheet or _G.love.graphics.newImage("sprites/FilledBlock.png")
-    self.frameDuration = frameDuration
+    self.position = o.position or {x=0, y=0}
+    self.image = o.image or _G.love.graphics.newImage("sprites/FilledBlock.png")
+    self.frameDuration = o.frameDuration or 0.1
     self.currentFrame = 1
     self.elapsedTime = 0
-    self.totalFrames = totalFrames or '1'
+    self.totalFrames = o.totalFrames or 1
 
     self.frameQuads = {}
     local frameWidth, frameHeight = 16, 16

@@ -1,8 +1,11 @@
 local scene = {}
 
 function scene:new(o, displayables)
+    o = o or {}
     setmetatable(o, self)
     self.displayables = displayables or {}
+    self.mapData = {}
+    self.gridData = {}
     return o
 end
 
@@ -10,13 +13,21 @@ function scene:addDisplayable(displayable)
     table.insert(self.displayables, displayable)
 end
 
-
 function scene:generateMap()
-    local mapData = {}
+    self.mapData = {}
 end
 
+local ResX = 800
+local ResY = 600 -- placeholder for testing
+
 function scene:generateMapGrid(mapData)
-    -- nested for loops of 1's and 0's 
+    self.gridData = {}
+    for i = 1, ResY do
+        for j = 1, ResX do
+            self.gridData[i][j] = 0
+        end
+    end
+    -- nested for loops of current resolution, should be generated either based on room or level
 end
 
 function scene:setDisplay()

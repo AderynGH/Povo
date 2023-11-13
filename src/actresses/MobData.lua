@@ -1,32 +1,51 @@
-local MobAI = require("utils/MobAI")
-local Enemy = _G.Povo.Enemy()
+local MobAI = _G.Povo.MobAI:new()
+local Enemy = _G.Povo.Enemy:new()
 
+-----------------------------------------------------------------------------
 local Zombie = setmetatable({}, Enemy)
 Zombie.__index = Zombie
 
-function Zombie:New(name, hp, damage)
+function Zombie:new(name, hp, damage, ai)
     local instance = setmetatable(Enemy:new(name, hp, damage), Zombie)
-    self.ai = MobAI.Zombie
+    instance.ai = ai or MobAI
+    instance.image = "sprites/Z.png"
     return instance
 end
 
+function Zombie:bite()
+    -- if zombie is touching player, player hp down 
+end
+
+-----------------------------------------------------------------------------
 local Lich = setmetatable({}, Enemy)
 Lich.__index = Lich
 
-function Lich:New(name, hp, damage, ai)
+function Lich:new(name, hp, damage, ai)
     local instance = setmetatable(Enemy:new(name, hp, damage), Lich)
-    self.ai = ai or self.defaultAI()
+    instance.ai = ai or self.defaultAI()
     return instance
 end
+
+function Lich:fireball()
+    -- spawns a 'minus' projectile that flys at the player
+end
+
+-----------------------------------------------------------------------------
 
 local OnkiGamora = setmetatable({}, Enemy)
 OnkiGamora.__index = OnkiGamora
 
-function OnkiGamora:New(name, hp, damage, ai)
+function OnkiGamora:new(name, hp, damage, ai)
     local instance = setmetatable(Enemy:new(name, hp, damage), OnkiGamora)
-    self.ai = ai or self.defaultAI()
+    instance.ai = ai or self.defaultAI()
     return instance
 end
+
+function OnkiGamora:throwBoomerang()
+    -- throws maybe a 'bracket' at the player that arches back
+end
+
+-----------------------------------------------------------------------------
 
 return {
     Zombie = Zombie,
