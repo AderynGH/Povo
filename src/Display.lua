@@ -23,7 +23,7 @@ end
 
 function Display:draw()
     for _, displayable in ipairs(self.displayables) do 
-        displayable:draw()  -- Assuming each displayable has a draw method
+        displayable:draw()
     end
 end
 

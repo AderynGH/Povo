@@ -1,4 +1,5 @@
 local Enemy = require("Enemy")
+local GameDisplay = _G.Povo.Display:new()
 local SceneManager = _G.Povo.SceneManager:new()
 local MobManager = _G.Povo.MobManager:new()
 
@@ -11,10 +12,13 @@ function GameManager:new(o)
     self.enemies = {}
     self.player1 = {}
     self.score = 0
-    self.MobManager = MobManager
-    self.SceneManager = SceneManager
+    self.gameDisplay = GameDisplay
+    self.mobManager = MobManager
+    self.sceneManager = SceneManager
     return o
 end
+
+-- need to find way to add created displayables to be added to displayables table
 
 function GameManager:setPlayer1(o)
     self.player1 = o

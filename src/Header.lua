@@ -16,7 +16,7 @@ _G.Povo.RoomGen = require("RoomGen")
 --actresses
 _G.Povo.Character = require("actresses/Character")
 _G.Povo.Door = require("actresses/Door")
-_G.Povo.MobAI = require("actresses/utils/MobAI")
+_G.Povo.MobAI = require("actresses.utils.MobAI")
 _G.Povo.MobData = require("actresses/MobData")
 
 --scenes

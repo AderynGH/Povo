@@ -15,13 +15,20 @@ function MobAI:new(o, trgt)
 	self.pathBuffer = self.path
 	self.nodes = {}
 	self.nodePos = 1
-	self.target = trgt or _G.gameManager.player1
+	self.target = trgt or {0, 0}
 	return o
 end
+local ResX = 800
+local ResY = 600
+local gridData = {}
+for i = 1, ResY do
+	gridData[i] = {}
+	for j = 1, ResX do
+		gridData[i][j] = 0
+	end
+end
 
-local scene = _G.gameManager.SceneManager:getScene()
-
-local grid = Grid(scene.gridData)
+local grid = Grid(gridData)
 local myFinder = Pathfinder(grid, 'JPS', walkable)
 
 function MobAI:getPath()

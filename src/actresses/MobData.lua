@@ -7,11 +7,12 @@ Zombie.__index = Zombie
 
 function Zombie:new(name, hp, damage, ai)
     local instance = setmetatable(Enemy:new(name, hp, damage), Zombie)
-    self.ai = ai or MobAI
+    instance.ai = ai or MobAI
+    instance.image = "sprites/Z.png"
     return instance
 end
 
-function Zombie:Bite()
+function Zombie:bite()
     -- if zombie is touching player, player hp down 
 end
 
@@ -21,11 +22,11 @@ Lich.__index = Lich
 
 function Lich:new(name, hp, damage, ai)
     local instance = setmetatable(Enemy:new(name, hp, damage), Lich)
-    self.ai = ai or self.defaultAI()
+    instance.ai = ai or self.defaultAI()
     return instance
 end
 
-function Lich:Fireball()
+function Lich:fireball()
     -- spawns a 'minus' projectile that flys at the player
 end
 
@@ -36,11 +37,11 @@ OnkiGamora.__index = OnkiGamora
 
 function OnkiGamora:new(name, hp, damage, ai)
     local instance = setmetatable(Enemy:new(name, hp, damage), OnkiGamora)
-    self.ai = ai or self.defaultAI()
+    instance.ai = ai or self.defaultAI()
     return instance
 end
 
-function OnkiGamora:ThrowBoomerang()
+function OnkiGamora:throwBoomerang()
     -- throws maybe a 'bracket' at the player that arches back
 end
 

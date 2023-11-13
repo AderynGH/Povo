@@ -12,8 +12,9 @@ function SceneManager:getScene()
     return self.currentScene
 end
 
-function SceneManager:setScene(o)
-    self.currentScene = o or _G.Povo.Scene:new()
+function SceneManager:setScene(o, scene)
+    self.currentScene = scene or _G.Povo.Scene:new()
 end
 -- pass in scene value, not 100% on how to implement this
+
 return SceneManager

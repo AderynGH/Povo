@@ -8,7 +8,7 @@ function Door:new(o, name, type, hp, speed)
     self.name = name or "Door"
     self.hp = hp or 100
     self.speed = speed or 0
-    self.image = "sprites/door.png"
+    self.image = "sprites/ForwardSlash.png"
 
     return 0
 end
