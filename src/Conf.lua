@@ -13,7 +13,7 @@ local function readSettings()
         writeDefaults()
     end
 
-    local function ReadFile()
+    function ReadFile()
         local fileData = io.read("*all")
     end
 end
