@@ -6,11 +6,18 @@ function MobManager:new(o)
     setmetatable(o, self)
     self.__index = self
     self.mobs = {}
+    self.mobCount = 0
     return o
 end
 
 function MobManager:spawnZombie()
-    table.insert(self.mobs, _G.Povo.MobData.Zombie:new("zombie", 100, 10))
+    self.mobCount = self.mobCount + 1
+    table.insert(self.mobs, _G.Povo.MobData.Zombie:new("zombie" .. self.mobCount, 100, 10))
+end
+
+function MobManager:removeMob(i)
+    self.mobCount = self.mobCount - 1
+    table.remove(self.mobs, i)
 end
 
 return MobManager

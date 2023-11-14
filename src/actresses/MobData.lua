@@ -8,7 +8,7 @@ Zombie.__index = Zombie
 function Zombie:new(name, hp, damage, ai)
     local instance = setmetatable(Enemy:new(name, hp, damage), Zombie)
     instance.ai = ai or MobAI
-    instance.image = "sprites/Z.png"
+    instance.image = _G.love.graphics.newImage("sprites/Z.png")
     return instance
 end
 
