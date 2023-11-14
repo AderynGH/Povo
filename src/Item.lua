@@ -1,10 +1,10 @@
 local Item = _G.Povo.Displayable:new()
 
-function Item:new(o, type, name, price)
+function Item:new(o, itemType, name, price)
     o = o or _G.Povo.Displayable:new(o)
     setmetatable(o, self)
     self.__index = self
-    self.type = type or "Item"
+    self.itemType = itemType or "Item"
     self.name = name or "Item name"
     self.price = price or 0
     return o

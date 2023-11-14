@@ -1,10 +1,10 @@
 local Actress = _G.Povo.Displayable:new()
 
-function Actress:new(o, type, name, hp, speed)
+function Actress:new(o, actType, name, hp, speed)
     o = o or _G.Povo.Displayable:new(o)
     setmetatable(o, self)
     self.__index = self
-    self.type = type or "Enemy"
+    self.actType = actType or "Enemy"
     self.name = name or "mob name"
     self.hp = hp or 100
     self.speed = speed or 10

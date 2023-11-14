@@ -18,6 +18,7 @@ function MobAI:new(o, trgt)
 	self.target = trgt or {0, 0}
 	return o
 end
+
 local ResX = 800
 local ResY = 600
 local gridData = {}

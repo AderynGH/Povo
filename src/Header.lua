@@ -11,6 +11,7 @@ _G.Povo.SceneManager = require("SceneManager")
 _G.Povo.MobManager = require("MobManager")
 _G.Povo.GameManager = require("GameManager")
 _G.Povo.RoomGen = require("RoomGen")
+_G.Povo.EventSystem = require("EventSystem")
 
 
 --actresses
@@ -33,6 +34,7 @@ return {
     GameManager = _G.Povo.GameManager,
     RoomGen = _G.Povo.RoomGen,
     Scene = _G.Povo.Scene,
+    EventSystem = _G.Povo.EventSystem,
     Character = _G.Povo.Character,
     Door = _G.Povo.Door,
     MobAI = _G.Povo.MobAI,

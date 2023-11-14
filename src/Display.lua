@@ -4,21 +4,16 @@ function Display:new(o)
     o = o or {}
     setmetatable(o, self)
     self.__index = self
-    self.displayables = {}  -- Initialize an empty table to hold displayable objects
+    self.scene = {}  -- Initialize an empty table to hold scene objects
     return o
 end
 
-function Display:add(displayable)
-    table.insert(self.displayables, displayable)
+function Display:addScene(scene)
+    table.insert(self.scene, scene)
 end
 
-function Display:remove(displayable)
-    for i, v in ipairs(self.displayables) do
-        if v == displayable then
-            table.remove(self.displayables, i)
-            break
-        end
-    end
+function Display:removeScene(scene, i)
+    table.remove(scene, i)
 end
 
 function Display:draw()

@@ -1,7 +1,6 @@
-local Enemy = require("Enemy")
 local GameDisplay = _G.Povo.Display:new()
 local SceneManager = _G.Povo.SceneManager:new()
-local MobManager = _G.Povo.MobManager:new()
+local EventSystem = _G.Povo.EventSystem:new()
 
 local GameManager = {}
 
@@ -13,7 +12,6 @@ function GameManager:new(o)
     self.player1 = {}
     self.score = 0
     self.gameDisplay = GameDisplay
-    self.mobManager = MobManager
     self.sceneManager = SceneManager
     return o
 end
